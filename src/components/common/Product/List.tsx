@@ -6,7 +6,7 @@ import { IProduct } from '@/lib/types'
 
 type TOptionsSeleted = 'GO_DETAIL' | 'EDIT' | 'DELETE'
 
-export const ProductList = ({ products, router }: { products: IProduct[], router: NextRouter}) => {
+export const ProductList = ({ products, router, className }: { products: IProduct[], router: NextRouter, className?: string }) => {
   const handleActionsOptions = (optionSelected: TOptionsSeleted, productId: number) => {
     if (optionSelected === 'GO_DETAIL') router.push(`/tienda/productos/${productId}`)
     if (optionSelected === 'EDIT') console.log(`Edit Product${productId}`)
@@ -14,7 +14,7 @@ export const ProductList = ({ products, router }: { products: IProduct[], router
   }
 
   return (
-    <Card className='mt-10'>
+    <Card className={`mt-10 ${className}`}>
       <Table>
         <TableHead>
           <TableRow>

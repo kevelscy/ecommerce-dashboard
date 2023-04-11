@@ -83,7 +83,6 @@ const ProductsPage = () => {
             )
             : (<ProductList products={products} router={router} />)
       }
-
     </div>
   )
 }
