@@ -2,26 +2,25 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+.authLayout-container {
+  position: relative;
+  @apply bg-slate-50;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+.authLayout_sidebar {
+  display: none;
+  width: 100%;
+  @apply w-full h-screen p-4 overflow-y-auto hidden transform top-0 left-0 overflow-auto ease-in-out transition-all duration-300 text-gray-700 sticky z-10 md:flex flex-col justify-start items-center md:rounded-r-xl pt-5 pb-10 border-r-2 border-gray-100;
+}
+
+@media screen and (min-width: 768px) {
+  .authLayout-container {
+    display: grid;
+    grid-template-columns: 250px minmax(0,1fr);
+  }
+
+  .authLayout_sidebar {
+    display: block;
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-}
