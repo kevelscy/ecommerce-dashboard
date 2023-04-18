@@ -12,7 +12,9 @@ type LinkNavigationProps = {
   '/cupones' |
   '/transacciones' |
   '/estadisticas' |
-  '/mi-cuenta'
+  '/mi-cuenta' |
+  '/soporte-tecnico' |
+  '/repartidores'
   label: string
   icon?: ReactNode
 }

@@ -1,6 +1,6 @@
-import { IconUser, IconChartPie, IconShoppingBag, IconCategory, IconBuildingStore, IconLogout, IconUsersGroup, IconUsers, IconTicket, IconCash, IconChartHistogram, IconClipboardList, IconUserCircle } from '@tabler/icons-react'
+import { IconUser, IconChartPie, IconShoppingBag, IconCategory, IconBuildingStore, IconLogout, IconUsersGroup, IconUsers, IconTicket, IconCash, IconChartHistogram, IconClipboardList, IconUserCircle, IconUserShield, IconTruckDelivery } from '@tabler/icons-react'
 import { useRouter } from 'next/router'
-import { toast } from 'react-toastify'
+import { toast } from 'sonner'
 import { useState } from 'react'
 // import { useTheme } from '@/lib/hooks/useTheme'
 
@@ -35,7 +35,7 @@ export const Drawer = () => {
     setIsLoading(false)
     router.push('/auth/signin')
     removeAuth()
-    toast('Sesión Cerrada', { type: 'info' })
+    toast.message('Sesión Cerrada')
   }
 
   return (
@@ -48,7 +48,7 @@ export const Drawer = () => {
       }
     >
       <section className='flex justify-start items-center text-gray-500 capitalize'>
-        <div className='p-4 mr-3 border border-gray-200 shadow-sm'>
+        <div className='p-4 mr-3 border border-gray-200 shadow-sm rounded-md'>
           <IconUser />
         </div>
 
@@ -122,6 +122,14 @@ export const Drawer = () => {
 
           <li>
             <LinkNavigation
+              to='/repartidores'
+              label='Repartidores'
+              icon={<IconTruckDelivery />}
+            />
+          </li>
+
+          <li>
+            <LinkNavigation
               to='/transacciones'
               label='Transacciones'
               icon={<IconCash />}
@@ -135,38 +143,25 @@ export const Drawer = () => {
               icon={<IconChartHistogram />}
             />
           </li>
+
         </ul>
-
-        {/* Toggle Dark Mode */}
-        {/* <li>
-            <button
-              onClick={toggleTheme}
-              className='w-full flex items-center p-2 group group-hover:text-black text-base font-normal text-gray-900 rounded-lg hover:bg-gray-100 select-none'
-            >
-              {
-                theme === 'light'
-                  ? <IconSunFilled />
-                  : <IconMoonFilled />
-              }
-
-              <span className='pl-2'>
-                {
-                  theme === 'light'
-                    ? 'Modo Oscuro'
-                    : 'Modo Claro'
-                }
-              </span>
-            </button>
-          </li> */}
 
         <Divider />
 
-        <ul className='mt-2'>
+        <ul className='mt-2 space-y-2'>
           <li>
             <LinkNavigation
               to='/mi-cuenta'
               label='Mi Cuenta'
               icon={<IconUserCircle />}
+            />
+          </li>
+
+          <li>
+            <LinkNavigation
+              to='/soporte-tecnico'
+              label='Soporte Tecnico'
+              icon={<IconUserShield />}
             />
           </li>
 

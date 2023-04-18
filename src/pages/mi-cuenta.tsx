@@ -1,20 +1,113 @@
-import { Title, Text } from '@tremor/react'
+import { Title, Text, Grid, Col, Card, Flex, Divider, Badge, List, ListItem, TextInput, Bold } from '@tremor/react'
+import { IconUserCircle } from '@tabler/icons-react'
 import Head from 'next/head'
 
 import { AuthenticatedLayout } from '@/layouts/Authenticated'
 
-import { ProductCard } from '@/components/common/Product'
-import { ProductListCards } from '@/components/common/Product/ListCards'
-
 const MyAccountPage = () => {
+  const generalInfo = [
+    {
+      label: 'ID',
+      value: '23443'
+    },
+    {
+      label: 'Activo',
+      value: 'Si'
+    },
+    {
+      label: 'Creado',
+      value: '11 de abril de 2023'
+    }
+  ]
+
   return (
-    <div className='h-screen'>
+    <div className='min-h-screen w-full h-full max-w-6xl'>
       <Title>Mi Cuenta</Title>
       <Text>Lorem ipsum dolor sit amet, consetetur sadipscing elitr.</Text>
 
-      <ProductListCards className='mt-2'>
-        <ProductCard />
-      </ProductListCards>
+      <Grid numCols={6} className='gap-x-6 mt-10 relative'>
+        <Col numColSpan={2} className='sticky top-0'>
+          <Card>
+            <Flex flexDirection='col' justifyContent='center' alignItems='center'>
+              <IconUserCircle size={80} />
+              <Text className='text-lg font-semibold'>Kevin Blanco</Text>
+            </Flex>
+
+            <Divider className='my-4' />
+
+            <List>
+              {
+                generalInfo.map((item) => (
+                  <ListItem key={item.value} className='border-none justify-start py-1'>
+                    <span>{item.label}: &nbsp;</span>
+                    <span>{item.value}</span>
+                  </ListItem>
+                ))
+              }
+            </List>
+
+            <Divider className='mt-4 mb-0' />
+
+            <Badge size='xl' className='w-full rounded-md mt-4 font-bold text-xl' color='indigo'>
+              Administrador
+            </Badge>
+          </Card>
+        </Col>
+
+        <Col numColSpan={4}>
+          <Card>
+            <Text className='text-lg font-semibold'>
+              Imagen de Perfil
+            </Text>
+
+            <Flex flexDirection='col' justifyContent='center' alignItems='center'>
+              <IconUserCircle size={110} />
+            </Flex>
+          </Card>
+
+          <Card className='mt-8'>
+            <Text className='text-lg font-semibold'>Información Básica</Text>
+
+            <form className='mt-4 space-y-4'>
+              <Flex className='gap-x-6'>
+                <div className='w-full'>
+                  <Bold>Nombre</Bold>
+                  <TextInput placeholder='Nombre' disabled className='mt-1' />
+                </div>
+
+                <div className='w-full'>
+                  <Bold>Apellido</Bold>
+                  <TextInput placeholder='Apellido' disabled className='mt-1' />
+                </div>
+              </Flex>
+
+              <Flex className='gap-x-6'>
+                <div className='w-full'>
+                  <Bold>Teléfono</Bold>
+                  <TextInput placeholder='Teléfono' disabled className='mt-1' />
+                </div>
+
+                <div className='w-full'>
+                  <Bold>Data</Bold>
+                  <TextInput placeholder='Data' disabled className='mt-1' />
+                </div>
+              </Flex>
+
+              <Flex className='gap-x-6'>
+                <div className='w-full'>
+                  <Bold>Correo electrónico</Bold>
+                  <TextInput placeholder='Correo electrónico' disabled className='mt-1' />
+                </div>
+
+                <div className='w-full'>
+                  <Bold>Suscripción</Bold>
+                  <TextInput value={'Suscrito'} placeholder='Suscripción' disabled className='mt-1' />
+                </div>
+              </Flex>
+            </form>
+          </Card>
+        </Col>
+      </Grid>
     </div>
   )
 }

@@ -4,6 +4,8 @@ import { IGenericFetchReturn } from './http'
 export enum ERole {
   USER = 'USER',
   MODERATOR = 'MODERATOR',
+  DISTRIBUTOR = 'DISTRIBUTOR',
+  SELLER = 'SELLER',
   ADMIN = 'ADMIN'
 }
 

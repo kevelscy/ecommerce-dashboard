@@ -2,25 +2,25 @@ import { Title, Text } from '@tremor/react'
 import Head from 'next/head'
 
 import { AuthenticatedLayout } from '@/layouts/Authenticated'
-import { OrdersList } from '@/components/page/pedidos/OrdersList'
-import { orders } from '@/lib/utils/dummyData'
+import { UsersList } from '@/components/page/usuarios/UsersList'
+import { users } from '@/lib/utils/dummyData'
 
-const OrdersPage = () => {
+const UsersPage = () => {
   return (
     <div className='min-h-screen w-full h-full max-w-6xl m-auto'>
-      <Title>Pedidos</Title>
+      <Title>Usuarios</Title>
       <Text>Lorem ipsum dolor sit amet, consetetur sadipscing elitr.</Text>
 
-      <OrdersList orders={orders} />
+      <UsersList users={users} />
     </div>
   )
 }
 
-OrdersPage.getLayout = function getLayout (page) {
+UsersPage.getLayout = function getLayout (page) {
   return (
     <AuthenticatedLayout>
       <Head>
-        <title>Pedidos</title>
+        <title>Usuarios</title>
       </Head>
 
       {page}
@@ -28,4 +28,4 @@ OrdersPage.getLayout = function getLayout (page) {
   )
 }
 
-export default OrdersPage
+export default UsersPage

@@ -1,18 +1,11 @@
-import { Table, TableHead, TableRow, TableHeaderCell, TableBody, TableCell, Text, Dropdown, DropdownItem, Card } from '@tremor/react'
+import { Table, TableHead, TableRow, TableHeaderCell, TableBody, TableCell, Text, Card, Flex, Button } from '@tremor/react'
 import { IconEye, IconPencil, IconTrash } from '@tabler/icons-react'
 import type { NextRouter } from 'next/router'
 
 import { IProduct } from '@/lib/types'
-
-type TOptionsSeleted = 'GO_DETAIL' | 'EDIT' | 'DELETE'
+import Link from 'next/link'
 
 export const ProductList = ({ products, router, className }: { products: IProduct[], router: NextRouter, className?: string }) => {
-  const handleActionsOptions = (optionSelected: TOptionsSeleted, productId: number) => {
-    if (optionSelected === 'GO_DETAIL') router.push(`/tienda/productos/${productId}`)
-    if (optionSelected === 'EDIT') console.log(`Edit Product${productId}`)
-    if (optionSelected === 'DELETE') console.log(`Delete Product${productId}`)
-  }
-
   return (
     <Card className={`mt-10 ${className}`}>
       <Table>
@@ -46,14 +39,17 @@ export const ProductList = ({ products, router, className }: { products: IProduc
               </TableCell>
 
               <TableCell>
-                <Dropdown
-                  onValueChange={(value) => handleActionsOptions(value as TOptionsSeleted, product.id)}
-                  placeholder='Elija una opcion'
-                >
-                  <DropdownItem value='GO_DETAIL' text='Ver Detalle' icon={IconEye} />
-                  <DropdownItem value='EDIT' text='Editar' icon={IconPencil} />
-                  <DropdownItem value='DELETE' text='Borrar' icon={IconTrash} />
-                </Dropdown>
+                <Flex justifyContent='center' alignItems='center'>
+                  <Link href={`/tienda/productos/${product.id}`}>
+                    <Button icon={IconEye} />
+                  </Link>
+
+                  <Link href={`/tienda/productos/${product.id}/editar`}>
+                    <Button icon={IconPencil} />
+                  </Link>
+
+                  <Button icon={IconTrash} />
+                </Flex>
               </TableCell>
             </TableRow>
           ))}
