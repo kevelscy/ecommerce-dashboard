@@ -2,6 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
   transpilePackages: ['@tremor/react'],
+  experimental: { appDir: true },
   async redirects () {
     return [
       {

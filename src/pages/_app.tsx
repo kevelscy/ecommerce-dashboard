@@ -1,9 +1,8 @@
-import { Toaster } from 'sonner'
-
 import { AppProps, NextPage, ReactElement, ReactNode } from '@/lib/types'
 import { useLoadingPage } from '@/lib/hooks/useLoadingPage'
 
 import { LoadingPage } from '@/components/layout/LoadingPage'
+import { Toaster } from '@/components/ui/toaster'
 
 import '@/styles/globals.css'
 
@@ -26,7 +25,7 @@ export default function EcommerceAdminApp ({ Component, pageProps }: AppPropsWit
 
       {getLayout(<Component {...pageProps} />)}
 
-      <Toaster richColors />
+      <Toaster />
     </div>
   )
 }

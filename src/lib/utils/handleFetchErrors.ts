@@ -1,4 +1,4 @@
-import { toast } from 'sonner'
+// import { toast } from 'sonner'
 
 type TToastType = 'success' | 'error' | 'message'
 
@@ -13,5 +13,6 @@ export const handleFetchErrors = (status: number, message: string) => {
         ? 'error'
         : 'message'
 
-  toast[typeStatus](message || 'Error')
+  // toast[typeStatus](message || 'Error')
+  console.log(typeStatus)
 }

@@ -1,6 +1,6 @@
 import { IconUser, IconChartPie, IconShoppingBag, IconCategory, IconBuildingStore, IconLogout, IconUsersGroup, IconUsers, IconTicket, IconCash, IconChartHistogram, IconClipboardList, IconUserCircle, IconUserShield, IconTruckDelivery } from '@tabler/icons-react'
 import { useRouter } from 'next/router'
-import { toast } from 'sonner'
+// import { toast } from 'sonner'
 import { useState } from 'react'
 // import { useTheme } from '@/lib/hooks/useTheme'
 
@@ -35,7 +35,7 @@ export const Drawer = () => {
     setIsLoading(false)
     router.push('/auth/signin')
     removeAuth()
-    toast.message('Sesión Cerrada')
+    // toast.message('Sesión Cerrada')
   }
 
   return (
