@@ -2,7 +2,7 @@ import { AppProps, NextPage, ReactElement, ReactNode } from '@/lib/types'
 import { useLoadingPage } from '@/lib/hooks/useLoadingPage'
 
 import { LoadingPage } from '@/components/layout/LoadingPage'
-import { Toaster } from '@/components/ui/toaster'
+import { Toaster } from '@/components/ui'
 
 import '@/styles/globals.css'
 
