@@ -4,7 +4,6 @@ import { Card, Tab, TabList, Text, Title } from '@tremor/react'
 // import { CountUp } from 'use-count-up'
 import { useState } from 'react'
 import Head from 'next/head'
-import { Dialog } from '@/components/layout/Dialoog'
 
 import { AuthenticatedLayout } from '@/layouts/Authenticated'
 
@@ -22,8 +21,6 @@ const DashboardPage = () => {
       {/* <div className='text-xl text-black font-bold'>
         <CountUp thousandsSeparator='.' decimalSeparator=',' isCounting end={13_323_533.53} duration={3.2} />
       </div> */}
-
-      <Dialog />
 
       <TabList
         defaultValue="1"

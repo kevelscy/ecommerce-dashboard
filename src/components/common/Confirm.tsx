@@ -9,9 +9,9 @@ import {
   AlertDialogTitle,
   AlertDialogTrigger,
   Button
-} from 'quickgo-ui'
+} from '@/components/ui'
 
-export function Dialog () {
+export function ConfirmModal () {
   return (
     <AlertDialog>
       <AlertDialogTrigger asChild>
