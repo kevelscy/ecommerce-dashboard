@@ -3,7 +3,7 @@ import { useLoadingPage } from '@/lib/hooks/useLoadingPage'
 
 import { LoadingPage } from '@/components/layout/LoadingPage'
 import { Toaster } from '@/components/ui'
-
+import { Analytics } from '@vercel/analytics/react'
 import '@/styles/globals.css'
 
 export type NextPageWithLayout<P = {}, IP = P> = NextPage<P, IP> & {
@@ -26,6 +26,7 @@ export default function EcommerceAdminApp ({ Component, pageProps }: AppPropsWit
       {getLayout(<Component {...pageProps} />)}
 
       <Toaster />
+      <Analytics />
     </div>
   )
 }
