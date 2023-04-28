@@ -1,6 +1,6 @@
 import { Text, Card, Table, TableHead, TableRow, TableHeaderCell, TableBody, TableCell, Badge, Flex, Button } from '@tremor/react'
 import { IconEye, IconTrash } from '@tabler/icons-react'
-import Link from 'next/link'
+// import Link from 'next/link'
 
 import { IUser, TRoles } from '@/lib/types/users'
 
@@ -75,11 +75,11 @@ export const UsersList = ({ users }: { users: IUser[] }) => {
 
                 <TableCell>
                   <Flex justifyContent='end' alignItems='center' className='gap-x-2'>
-                    <Link href={`/tienda/productos/${user.id}`}>
-                      <Button variant='secondary' color='blue' size='xs'>
-                        <IconEye size={18} />
-                      </Button>
-                    </Link>
+                    {/* <Link href={`/tienda/productos/${user.id}`}> */}
+                    <Button variant='secondary' color='blue' size='xs'>
+                      <IconEye size={18} />
+                    </Button>
+                    {/* </Link> */}
 
                     <Button variant='secondary' color='red' size='xs'>
                       <IconTrash size={18} />

@@ -21,10 +21,10 @@ const SupportPage = () => {
           <Text className='w-full text-center'>
               Comunícate con nuestro agente de soporte tecnico&nbsp;
             <a
-              href='mailto:kevelscy@gmail.com'
+              href='mailto:devels.tech@gmail.com'
               className='underline text-blue-400 hover:text-blue-500'
             >
-              kevelscy@gmail.com
+              devels.tech@gmail.com
             </a>
           </Text>
         </Card>

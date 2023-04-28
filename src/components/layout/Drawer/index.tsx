@@ -1,5 +1,5 @@
 import { IconUser, IconChartPie, IconShoppingBag, IconCategory, IconBuildingStore, IconLogout, IconUsersGroup, IconUsers, IconTicket, IconCash, IconChartHistogram, IconClipboardList, IconUserCircle, IconUserShield, IconTruckDelivery } from '@tabler/icons-react'
-import { useRouter } from 'next/router'
+// import { useRouter } from 'next/router'
 // import { toast } from 'sonner'
 import { useState } from 'react'
 // import { useTheme } from '@/lib/hooks/useTheme'
@@ -7,7 +7,7 @@ import { useState } from 'react'
 import { handleFetchErrors } from '@/lib/utils/handleFetchErrors'
 import { getLocalStorage } from '@/lib/utils/localStorage'
 import { useDrawerStore } from '@/lib/store/Drawer'
-import { useAuthStore } from '@/lib/store/Auth'
+// import { useAuthStore } from '@/lib/store/Auth'
 import { signOut } from '@/lib/services/auth'
 
 import { LinkNavigationNested } from './LinkNavigationNested'
@@ -15,11 +15,11 @@ import { LinkNavigation } from './LinkNavigation'
 import { Badge, Divider } from '@tremor/react'
 
 export const Drawer = () => {
-  const { removeAuth } = useAuthStore()
+  // const { removeAuth } = useAuthStore()
   // const { theme, toggleTheme } = useTheme()
   const [, setIsLoading] = useState(false)
   const { isOpen } = useDrawerStore()
-  const router = useRouter()
+  // const router = useRouter()
 
   const logout = async () => {
     setIsLoading(true)
@@ -33,8 +33,8 @@ export const Drawer = () => {
     }
 
     setIsLoading(false)
-    router.push('/auth/signin')
-    removeAuth()
+    // router.push('/auth/signin')
+    // removeAuth()
     // toast.message('Sesión Cerrada')
   }
 

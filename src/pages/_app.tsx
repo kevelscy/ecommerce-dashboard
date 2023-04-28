@@ -1,9 +1,9 @@
 import { AppProps, NextPage, ReactElement, ReactNode } from '@/lib/types'
 import { useLoadingPage } from '@/lib/hooks/useLoadingPage'
+import { Analytics } from '@vercel/analytics/react'
 
 import { LoadingPage } from '@/components/layout/LoadingPage'
 import { Toaster } from '@/components/ui'
-import { Analytics } from '@vercel/analytics/react'
 import '@/styles/globals.css'
 
 export type NextPageWithLayout<P = {}, IP = P> = NextPage<P, IP> & {

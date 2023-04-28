@@ -1,6 +1,6 @@
 import { Button, Card, Flex, Table, TableBody, TableCell, TableHead, TableHeaderCell, TableRow, Text } from '@tremor/react'
 import { IconEye, IconTrash } from '@tabler/icons-react'
-import Link from 'next/link'
+// import Link from 'next/link'
 
 import { IDistributor } from '@/lib/types/distributors'
 
@@ -58,11 +58,11 @@ export const DistributorsList = ({ distributors }: { distributors: IDistributor[
 
                 <TableCell>
                   <Flex justifyContent='end' alignItems='center' className='gap-x-2'>
-                    <Link href={`/repartidores/${distributor.id}`}>
-                      <Button variant='secondary' color='blue' size='xs'>
-                        <IconEye size={18} />
-                      </Button>
-                    </Link>
+                    {/* <Link href={`/repartidores/${distributor.id}`}> */}
+                    <Button variant='secondary' color='blue' size='xs'>
+                      <IconEye size={18} />
+                    </Button>
+                    {/* </Link> */}
 
                     <Button variant='secondary' color='red' size='xs'>
                       <IconTrash size={18} />

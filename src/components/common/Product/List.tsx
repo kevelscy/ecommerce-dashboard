@@ -1,9 +1,9 @@
 import { Table, TableHead, TableRow, TableHeaderCell, TableBody, TableCell, Text, Card, Flex, Button } from '@tremor/react'
-import { IconEye, IconPencil, IconTrash } from '@tabler/icons-react'
+import { IconEye, IconTrash } from '@tabler/icons-react'
 import type { NextRouter } from 'next/router'
 
 import { IProduct } from '@/lib/types'
-import Link from 'next/link'
+// import Link from 'next/link'
 
 export const ProductList = ({ products, router, className }: { products: IProduct[], router: NextRouter, className?: string }) => {
   return (
@@ -39,16 +39,16 @@ export const ProductList = ({ products, router, className }: { products: IProduc
               </TableCell>
 
               <TableCell>
-                <Flex justifyContent='center' alignItems='center'>
-                  <Link href={`/tienda/productos/${product.id}`}>
-                    <Button icon={IconEye} />
-                  </Link>
+                <Flex justifyContent='end' alignItems='center' className='gap-x-2'>
+                  {/* <Link href={`/tienda/productos/${order.id}`}> */}
+                  <Button variant='secondary' color='blue' size='xs'>
+                    <IconEye size={18} />
+                  </Button>
+                  {/* </Link> */}
 
-                  <Link href={`/tienda/productos/${product.id}/editar`}>
-                    <Button icon={IconPencil} />
-                  </Link>
-
-                  <Button icon={IconTrash} />
+                  <Button variant='secondary' color='red' size='xs'>
+                    <IconTrash size={18} />
+                  </Button>
                 </Flex>
               </TableCell>
             </TableRow>

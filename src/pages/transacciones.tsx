@@ -6,7 +6,7 @@ import Head from 'next/head'
 
 import { AuthenticatedLayout } from '@/layouts/Authenticated'
 import { Modal } from '@/components/layout/Modal'
-import Link from 'next/link'
+// import Link from 'next/link'
 
 type TLabelPaymentMethods = 'Master Card' | 'VISA' | 'Paypal' | 'Cash'
 
@@ -266,12 +266,12 @@ const TansactionsPage = () => {
                       <Text>{ transactionSelected?.purchasedProduct.quantity }</Text>
                     </ListItem>
 
-                    <Link
-                      className='mt-1 font-medium underline text-blue-400 hover:text-blue-500 border-none py-1'
-                      href={`/tienda/productos/${transactionSelected?.purchasedProduct.id}`}
+                    <span
+                      className='mt-1 font-medium underline text-blue-400 hover:text-blue-500 border-none py-1 cursor-pointer'
+                      // href={`/tienda/productos/${transactionSelected?.purchasedProduct.id}`}
                     >
                       Ver Producto
-                    </Link>
+                    </span>
                   </List>
                 </Flex>
 

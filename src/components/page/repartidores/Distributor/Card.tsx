@@ -1,6 +1,7 @@
 import { Button, Card, Divider, Text } from '@tremor/react'
 import { IconEye } from '@tabler/icons-react'
-import Link from 'next/link'
+// import Link from 'next/link'
+
 import { IDistributor } from '@/lib/types/distributors'
 
 export const DistributorCard = (distributor: IDistributor) => {
@@ -29,16 +30,16 @@ export const DistributorCard = (distributor: IDistributor) => {
 
       <Divider className='mt-3 mb-2' />
 
-      <Link href={`/repartidores/${distributor.id}`}>
-        <Button
-          icon={IconEye}
-          variant='secondary'
-          className='w-full mt-2'
-          size='xs'
-        >
-          Ver Perfil
-        </Button>
-      </Link>
+      {/* <Link href={`/repartidores/${distributor.id}`}> */}
+      <Button
+        icon={IconEye}
+        variant='secondary'
+        className='w-full mt-2'
+        size='xs'
+      >
+        Ver Perfil
+      </Button>
+      {/* </Link> */}
     </Card>
   )
 }

@@ -1,6 +1,6 @@
 import { Text, Card, Table, TableHead, TableRow, TableHeaderCell, TableBody, TableCell, Badge, Flex, Button } from '@tremor/react'
 import { IconShoppingCart, IconEye, IconTrash } from '@tabler/icons-react'
-import Link from 'next/link'
+// import Link from 'next/link'
 
 export const OrdersList = ({ orders }: { orders: any[] }) => {
   return (
@@ -60,11 +60,11 @@ export const OrdersList = ({ orders }: { orders: any[] }) => {
 
                 <TableCell>
                   <Flex justifyContent='end' alignItems='center' className='gap-x-2'>
-                    <Link href={`/tienda/productos/${order.id}`}>
-                      <Button variant='secondary' color='blue' size='xs'>
-                        <IconEye size={18} />
-                      </Button>
-                    </Link>
+                    {/* <Link href={`/tienda/productos/${order.id}`}> */}
+                    <Button variant='secondary' color='blue' size='xs'>
+                      <IconEye size={18} />
+                    </Button>
+                    {/* </Link> */}
 
                     <Button variant='secondary' color='red' size='xs'>
                       <IconTrash size={18} />
