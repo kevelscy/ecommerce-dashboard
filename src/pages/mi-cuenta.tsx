@@ -25,8 +25,8 @@ const MyAccountPage = () => {
       <Title>Mi Cuenta</Title>
       <Text>Lorem ipsum dolor sit amet, consetetur sadipscing elitr.</Text>
 
-      <Grid numCols={6} className='gap-x-6 mt-10 relative'>
-        <Col numColSpan={2} className='sticky top-0'>
+      <Grid numCols={1} numColsMd={6} className='gap-x-6 gap-y-6 mt-10 relative'>
+        <Col numColSpanMd={2} className='md:sticky top-0'>
           <Card>
             <Flex flexDirection='col' justifyContent='center' alignItems='center'>
               <IconUserCircle size={80} />
@@ -54,7 +54,7 @@ const MyAccountPage = () => {
           </Card>
         </Col>
 
-        <Col numColSpan={4}>
+        <Col numColSpanMd={4}>
           <Card>
             <Text className='text-lg font-semibold'>
               Imagen de Perfil
@@ -69,37 +69,37 @@ const MyAccountPage = () => {
             <Text className='text-lg font-semibold'>Información Básica</Text>
 
             <form className='mt-4 space-y-4'>
-              <Flex className='gap-x-6'>
+              <Flex className='flex-col md:flex-row gap-x-6'>
                 <div className='w-full'>
                   <Bold>Nombre</Bold>
                   <TextInput placeholder='Nombre' disabled className='mt-1' />
                 </div>
 
-                <div className='w-full'>
+                <div className='w-full mt-4 md:mt-0'>
                   <Bold>Apellido</Bold>
                   <TextInput placeholder='Apellido' disabled className='mt-1' />
                 </div>
               </Flex>
 
-              <Flex className='gap-x-6'>
+              <Flex className='flex-col md:flex-row gap-x-6'>
                 <div className='w-full'>
                   <Bold>Teléfono</Bold>
                   <TextInput placeholder='Teléfono' disabled className='mt-1' />
                 </div>
 
-                <div className='w-full'>
+                <div className='w-full mt-4 md:mt-0'>
                   <Bold>Data</Bold>
                   <TextInput placeholder='Data' disabled className='mt-1' />
                 </div>
               </Flex>
 
-              <Flex className='gap-x-6'>
+              <Flex className='flex-col md:flex-row gap-x-6'>
                 <div className='w-full'>
                   <Bold>Correo electrónico</Bold>
                   <TextInput placeholder='Correo electrónico' disabled className='mt-1' />
                 </div>
 
-                <div className='w-full'>
+                <div className='w-full mt-4 md:mt-0'>
                   <Bold>Suscripción</Bold>
                   <TextInput value={'Suscrito'} placeholder='Suscripción' disabled className='mt-1' />
                 </div>
