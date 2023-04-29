@@ -6,7 +6,7 @@ import { useDrawerStore } from '@/lib/store/Drawer'
 import { Button } from '@tremor/react'
 
 export const AuthenticatedLayout = ({ children }: { children: ReactNode }) => {
-  const { isOpen, openDrawer } = useDrawerStore()
+  const { openDrawer } = useDrawerStore()
 
   return (
     <div className='authLayout-container'>

@@ -6,7 +6,7 @@ import { useState } from 'react'
 
 import { handleFetchErrors } from '@/lib/utils/handleFetchErrors'
 import { getLocalStorage } from '@/lib/utils/localStorage'
-import { useDrawerStore } from '@/lib/store/Drawer'
+// import { useDrawerStore } from '@/lib/store/Drawer'
 // import { useAuthStore } from '@/lib/store/Auth'
 import { signOut } from '@/lib/services/auth'
 
@@ -18,7 +18,7 @@ export const Drawer = () => {
   // const { removeAuth } = useAuthStore()
   // const { theme, toggleTheme } = useTheme()
   const [, setIsLoading] = useState(false)
-  const { isOpen } = useDrawerStore()
+  // const { isOpen } = useDrawerStore()
   // const router = useRouter()
 
   const logout = async () => {
