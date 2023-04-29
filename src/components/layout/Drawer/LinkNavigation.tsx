@@ -17,13 +17,15 @@ type LinkNavigationProps = {
   '/repartidores'
   label: string
   icon?: ReactNode
+  onClick?: () => void
 }
 
-export const LinkNavigation = ({ to, label, icon }: LinkNavigationProps) => {
+export const LinkNavigation = ({ to, label, icon, onClick }: LinkNavigationProps) => {
   const router = useRouter()
 
   return (
     <Link
+      onClick={onClick}
       href={`${to}`}
       className={
         `border-2 border-transparent flex items-center p-2 group group-hover:text-black text-base font-normal text-gray-900 rounded-lg hover:bg-gray-100 

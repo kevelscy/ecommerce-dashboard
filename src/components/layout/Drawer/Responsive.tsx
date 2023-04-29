@@ -26,6 +26,7 @@ export const DrawerMobile = () => {
     }
 
     setIsLoading(false)
+    closeDrawer()
   }
 
   return (
@@ -63,6 +64,7 @@ export const DrawerMobile = () => {
         <ul className='space-y-2'>
           <li>
             <LinkNavigation
+              onClick={closeDrawer}
               to='/dashboard'
               label='Dashboard'
               icon={<IconChartPie />}
@@ -71,6 +73,7 @@ export const DrawerMobile = () => {
 
           <li>
             <LinkNavigationNested
+              onClick={closeDrawer}
               label='Tienda'
               icon={<IconBuildingStore />}
               subLinks={[
@@ -90,6 +93,7 @@ export const DrawerMobile = () => {
 
           <li>
             <LinkNavigation
+              onClick={closeDrawer}
               to='/pedidos'
               label='Pedidos'
               icon={<IconClipboardList />}
@@ -98,6 +102,7 @@ export const DrawerMobile = () => {
 
           <li>
             <LinkNavigation
+              onClick={closeDrawer}
               to='/cupones'
               label='Cupones'
               icon={<IconTicket />}
@@ -106,6 +111,7 @@ export const DrawerMobile = () => {
 
           <li>
             <LinkNavigation
+              onClick={closeDrawer}
               to='/usuarios'
               label='Usuarios'
               icon={<IconUsers />}
@@ -114,6 +120,7 @@ export const DrawerMobile = () => {
 
           <li>
             <LinkNavigation
+              onClick={closeDrawer}
               to='/vendedores'
               label='Vendedores'
               icon={<IconUsersGroup />}
@@ -122,6 +129,7 @@ export const DrawerMobile = () => {
 
           <li>
             <LinkNavigation
+              onClick={closeDrawer}
               to='/repartidores'
               label='Repartidores'
               icon={<IconTruckDelivery />}
@@ -130,6 +138,7 @@ export const DrawerMobile = () => {
 
           <li>
             <LinkNavigation
+              onClick={closeDrawer}
               to='/transacciones'
               label='Transacciones'
               icon={<IconCash />}
@@ -138,6 +147,7 @@ export const DrawerMobile = () => {
 
           <li>
             <LinkNavigation
+              onClick={closeDrawer}
               to='/estadisticas'
               label='Estadisticas'
               icon={<IconChartHistogram />}
@@ -151,6 +161,7 @@ export const DrawerMobile = () => {
         <ul className='mt-2 space-y-2'>
           <li>
             <LinkNavigation
+              onClick={closeDrawer}
               to='/mi-cuenta'
               label='Mi Cuenta'
               icon={<IconUserCircle />}
@@ -159,6 +170,7 @@ export const DrawerMobile = () => {
 
           <li>
             <LinkNavigation
+              onClick={closeDrawer}
               to='/soporte-tecnico'
               label='Soporte Tecnico'
               icon={<IconUserShield />}

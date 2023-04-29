@@ -5,6 +5,7 @@ import Link from 'next/link'
 type LinkNavigationNestedProps = {
   label: string
   icon?: ReactNode
+  onClick?: () => void
   subLinks: {
     to: '/' |
     '/tienda/productos' |
@@ -20,7 +21,7 @@ type LinkNavigationNestedProps = {
 }[]
 }
 
-export const LinkNavigationNested = ({ label, icon, subLinks }: LinkNavigationNestedProps) => {
+export const LinkNavigationNested = ({ label, icon, subLinks, onClick }: LinkNavigationNestedProps) => {
   const [show, setShow] = useState(false)
   const router = useRouter()
 
@@ -45,6 +46,7 @@ export const LinkNavigationNested = ({ label, icon, subLinks }: LinkNavigationNe
           subLinks.map(subLink => (
             <li key={ subLink.to }>
               <Link
+                onClick={onClick}
                 href={ subLink.to }
                 className={
                   `border-2 border-transparent flex items-center w-full p-2 text-base font-normal text-gray-900 transition duration-75 rounded-lg pl-6 group hover:bg-gray-100  
