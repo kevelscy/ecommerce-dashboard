@@ -18,7 +18,7 @@ export const AuthenticatedLayout = ({ children }: { children: ReactNode }) => {
         variant='secondary'
         size='xs'
         color='blue'
-        className='hidden md:block px-1.5 absolute top-3 right-3'
+        className='block md:hidden px-1.5 absolute top-3 right-3'
       >
         <IconMenu2 size={18} />
       </Button>
