@@ -8,7 +8,7 @@ interface IDrawerAtom {
 }
 
 export const useDrawerStore = create<IDrawerAtom>(set => ({
-  isOpen: true,
+  isOpen: false,
   openDrawer: () => set({ isOpen: true }),
   closeDrawer: () => set({ isOpen: false }),
   toggleDrawer: () => set(prevState => ({ isOpen: !prevState.isOpen }))

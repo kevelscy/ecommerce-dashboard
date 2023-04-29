@@ -88,7 +88,8 @@
 .authLayout_sidebar {
   display: none;
   width: 100%;
-  @apply w-full h-screen p-4 overflow-y-auto hidden transform top-0 left-0 overflow-auto ease-in-out transition-all duration-300 text-gray-700 sticky z-10 md:flex flex-col justify-start items-center md:rounded-r-xl pt-5 pb-10 border-r-2 border-gray-100;
+  position: fixed;
+  @apply w-full h-screen p-4 overflow-y-auto hidden transform top-0 left-0 overflow-auto ease-in-out transition-all duration-300 text-gray-700 z-10 md:flex flex-col justify-start items-center md:rounded-r-xl pt-5 pb-10 border-r-2 border-gray-100;
 }
 
 @media screen and (min-width: 768px) {
@@ -98,6 +99,7 @@
   }
 
   .authLayout_sidebar {
+    position: sticky;
     display: block;
   }
 }

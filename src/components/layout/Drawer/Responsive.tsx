@@ -1,25 +1,18 @@
-import { IconUser, IconChartPie, IconShoppingBag, IconCategory, IconBuildingStore, IconLogout, IconUsersGroup, IconUsers, IconTicket, IconCash, IconChartHistogram, IconClipboardList, IconUserCircle, IconUserShield, IconTruckDelivery } from '@tabler/icons-react'
-// import { useRouter } from 'next/router'
-// import { toast } from 'sonner'
+import { IconUser, IconChartPie, IconShoppingBag, IconCategory, IconBuildingStore, IconLogout, IconUsersGroup, IconUsers, IconTicket, IconCash, IconChartHistogram, IconClipboardList, IconUserCircle, IconUserShield, IconTruckDelivery, IconX } from '@tabler/icons-react'
 import { useState } from 'react'
-// import { useTheme } from '@/lib/hooks/useTheme'
 
 import { handleFetchErrors } from '@/lib/utils/handleFetchErrors'
 import { getLocalStorage } from '@/lib/utils/localStorage'
 import { useDrawerStore } from '@/lib/store/Drawer'
-// import { useAuthStore } from '@/lib/store/Auth'
 import { signOut } from '@/lib/services/auth'
 
 import { LinkNavigationNested } from './LinkNavigationNested'
 import { LinkNavigation } from './LinkNavigation'
-import { Badge, Divider } from '@tremor/react'
+import { Badge, Button, Divider } from '@tremor/react'
 
-export const Drawer = () => {
-  // const { removeAuth } = useAuthStore()
-  // const { theme, toggleTheme } = useTheme()
+export const DrawerMobile = () => {
   const [, setIsLoading] = useState(false)
-  const { isOpen } = useDrawerStore()
-  // const router = useRouter()
+  const { isOpen, closeDrawer } = useDrawerStore()
 
   const logout = async () => {
     setIsLoading(true)
@@ -33,9 +26,6 @@ export const Drawer = () => {
     }
 
     setIsLoading(false)
-    // router.push('/auth/signin')
-    // removeAuth()
-    // toast.message('Sesión Cerrada')
   }
 
   return (
@@ -43,9 +33,11 @@ export const Drawer = () => {
       id='drawer-navigation'
       tabIndex={-1}
       aria-labelledby='drawer-navigation-label'
-      className='authLayout_sidebar bg-white'
+      className={
+        `${isOpen ? '-translate-x-0' : '-translate-x-full'} h-screen fixed overflow-auto top-0 left-0 z-50 w-full bg-white md:hidden py-4`
+      }
     >
-      <section className='flex justify-start items-center text-gray-500 capitalize'>
+      <section className='flex justify-start items-center text-gray-500 capitalize relative'>
         <div className='p-4 mr-3 border border-gray-200 shadow-sm rounded-md'>
           <IconUser />
         </div>
@@ -55,6 +47,16 @@ export const Drawer = () => {
           <span>Kevin Blanco</span> <br />
           <Badge color='indigo' className='rounded-md text-xs mt-1' size='md'>Administrador</Badge>
         </div>
+
+        <Button
+          onClick={closeDrawer}
+          variant='secondary'
+          size='xs'
+          color='red'
+          className='px-1.5 absolute top-3 right-3'
+        >
+          <IconX size={18} />
+        </Button>
       </section>
 
       <div className='w-full py-4 overflow-y-auto'>
