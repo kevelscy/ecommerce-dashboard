@@ -39,13 +39,13 @@ const ProductsPage = () => {
 
   return (
     <div className='min-h-screen h-full'>
-      <Flex>
+      <Flex className='block lg:flex'>
         <div>
           <Title className='text-2xl font-bold'>Productos</Title>
           <Text>Listado de productos</Text>
         </div>
 
-        <Card className='max-w-xs'>
+        <Card className='max-w-xs my-4'>
           <Text>Cambiar visualización de los productos</Text>
 
           <Dropdown
