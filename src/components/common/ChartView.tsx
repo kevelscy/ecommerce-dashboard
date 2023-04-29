@@ -59,7 +59,7 @@ export default function ChartView () {
           </Flex>
           <Text> Daily increase or decrease per domain </Text>
         </div>
-        <div className="mt-6 md:mt-0">
+        <div className="mt-6 md:mt-0 overflow-auto">
           <Toggle
             color="zinc"
             defaultValue={selectedKpi}
